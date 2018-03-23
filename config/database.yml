@@ -10,7 +10,7 @@ default: &default
   timeout: 5000
 
 development:
-  url: postgresql://roc:roc@localhost/test
+  url: <%= ENV.fetch("MUD_DB_URL") %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
