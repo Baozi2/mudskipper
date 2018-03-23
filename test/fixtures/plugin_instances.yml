@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  version: MyString
+  path: MyString
+  published: false
+  plugin: one
+
+two:
+  version: MyString
+  path: MyString
+  published: false
+  plugin: two

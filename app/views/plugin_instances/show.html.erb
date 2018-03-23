@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @plugin_instance.version %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @plugin_instance.path %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @plugin_instance.published %>
+</p>
+
+<p>
+  <strong>Plugin:</strong>
+  <%= @plugin_instance.plugin %>
+</p>
+
+<%= link_to 'Edit', edit_plugin_instance_path(@plugin_instance) %> |
+<%= link_to 'Back', plugin_instances_path %>

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= h "插件#{@plugin.name} 新增一个发布版本" %></h3>
+  </div>
+  <div class="card-body">
+
+    <%= render 'form', plugin_instance: @plugin_instance %>
+  </div>
+  <div class="card-footer">
+    <%= link_to '返回', plugin_plugin_instances_path %>
+  </div>
+</div>
+

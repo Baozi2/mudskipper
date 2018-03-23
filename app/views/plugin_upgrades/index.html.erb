@@ -1,0 +1,26 @@
+<h3><%= t('plugin.instance.upgrade.index', plugin: @plugin.name) %></h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>IP</th>
+      <th>OS</th>
+      <th>Version</th>
+      <th><%= t('plugin.instance.time') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plugin_upgrades.each do |plugin_upgrade| %>
+      <tr>
+        <td><%= plugin_upgrade.ip %></td>
+        <td><%= plugin_upgrade.os %></td>
+        <td><%= plugin_upgrade.version %></td>
+        <td><%= plugin_upgrade.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to t('back'), plugin_plugin_instances_path %>

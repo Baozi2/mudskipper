@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip: MyString
+  os: MyString
+  version: MyString
+  plugin_instance: one
+
+two:
+  ip: MyString
+  os: MyString
+  version: MyString
+  plugin_instance: two

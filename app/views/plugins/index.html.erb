@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= t('plugin.list') %></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>AppId</th>
+      <th><%= t('plugin.version') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plugins.each do |plugin| %>
+      <tr>
+        <td><%= plugin.name %></td>
+        <td><%= plugin.appid %></td>
+        <td><%= plugin.current_version&.version %></td>
+        <td><%= link_to t('edit'), edit_plugin_path(plugin) %></td>
+        <td><%= link_to t('plugin.history'), plugin_plugin_instances_path(plugin) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new'), new_plugin_path %>

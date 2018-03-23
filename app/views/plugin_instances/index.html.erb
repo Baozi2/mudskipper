@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @plugin.name %> 插件发布历史</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= t('plugin.instance.version') %></th>
+      <th><%= t('plugin.instance.state') %></th>
+      <th><%= t('plugin.instance.publish_time') %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plugin_instances.each do |plugin_instance| %>
+      <tr>
+        <td scope="row"><%= plugin_instance.version %></td>
+        <td><%= plugin_instance.published ? t('plugin.instance.able') : t('plugin.instance.disable')%></td>
+        <td><%= plugin_instance.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+        <td><%= link_to t('plugin.instance.upgrade.index', plugin: nil), plugin_plugin_instance_plugin_upgrades_path(@plugin, plugin_instance) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('plugin.instance.new'), new_plugin_plugin_instance_path %>
+<%= link_to t('back'), plugins_path %>

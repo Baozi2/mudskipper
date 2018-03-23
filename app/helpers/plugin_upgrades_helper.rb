@@ -1,0 +1,2 @@
+module PluginUpgradesHelper
+end
