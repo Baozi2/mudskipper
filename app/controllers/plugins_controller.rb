@@ -63,13 +63,11 @@ class PluginsController < ApplicationController
   end
 
   def update_xml
-   p request.remote_ip
    plugin = Plugin.find_by(appid: params[:x].split('&')[0].split('=')[1])
    current_version = plugin.current_version
     @crx = {
       appid: plugin.appid,
-      codebase: "http://192.168.21.23:3000/chrome/crx?p=#{current_version.id}&os=#{params[:os]}",
-      #codebase: "http://192.168.200.54:3000/chrome/crx?p=#{current_version.id}",
+      codebase: "http://192.168.200.54:3000/chrome/crx?p=#{current_version.id}",
       version: current_version.version
     }
   end
