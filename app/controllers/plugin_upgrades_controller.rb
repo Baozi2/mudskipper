@@ -3,7 +3,8 @@ class PluginUpgradesController < ApplicationController
 
   def index
     @plugin = Plugin.find(params[:plugin_id])
-    @plugin_upgrades = PluginUpgrade.all
+    @plugin_instance = PluginInstance.find(params[:plugin_instance_id])
+    @plugin_upgrades = @plugin_instance.plugin_upgrades
   end
 
 end
