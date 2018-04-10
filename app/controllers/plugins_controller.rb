@@ -67,7 +67,7 @@ class PluginsController < ApplicationController
    current_version = plugin.current_version
     @crx = {
       appid: plugin.appid,
-      codebase: "http://192.168.200.54:3000/chrome/crx?p=#{current_version.id}&os=#{params[:os]}",
+      codebase: "http://localhost/chrome/crx?p=#{current_version.id}&os=#{params[:os]}",
       version: current_version.version
     }
   end
